@@ -1,11 +1,10 @@
-import { styled } from 'styletron-react'
-import { BREAKPOINT_LG } from '../utils/breakpoints'
+import styled from 'styled-components'
 
-export const Tags = styled('ul', {
-  textTransform: 'uppercase',
-  display: 'inline',
-  margin: '0 0 1rem',
-  fontSize: '13px'
-})
+export const Tags = styled.ul`
+  text-transform: uppercase;
+  display: inline;
+  margin: 0 0 1rem;
+  font-size: 13px;
+`
 
 export default Tags

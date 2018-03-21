@@ -1,10 +1,11 @@
-import { styled } from 'styletron-react'
-import { BREAKPOINT_LG } from '../utils/breakpoints'
+import styled from 'styled-components'
+import theme from '../utils/ds'
 
-export const Timestamp = styled('div', {
-  marginBottom: '1rem',
-  fontSize: '14px',
-  textTransform: 'uppercase'
-})
+export const Timestamp = styled.div`
+  margin-bottom: 1rem;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: ${theme.brand('text')};
+`
 
 export default Timestamp

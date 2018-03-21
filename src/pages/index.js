@@ -1,18 +1,18 @@
 import * as React from 'react'
-import { styled } from 'styletron-react'
+import styled from 'styled-components'
 import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
 
-const Title = styled('h1', {
-  textAlign: 'center'
-})
+// import introImg from '../static/images/cannabis.jpg'
+
+const Title = styled.h2``
 
 const Index = ({ transition }) => {
   return (
     <div style={transition && transition.style}>
-      Welcome to bongs and batteries.....
+      <Title>welcome...</Title>
     </div>
-  );
+  )
 }
 
 export default Index

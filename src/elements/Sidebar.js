@@ -1,25 +1,30 @@
-import { styled } from 'styletron-react'
-import { BREAKPOINT_LG, BREAKPOINT_MD } from '../utils/breakpoints'
+import styled from 'styled-components'
+import theme from '../utils/ds'
+import media from '../utils/breakpoints'
 
-export const Sidebar = styled('aside', {
-  borderTop: '4px solid #000',
-  paddingTop: '2rem',
-  display: 'grid',
-  marginBottom: '1rem',
-  gridTemplateRows: 'auto auto',
-  gridTemplateColumns: 'auto',
-  gridGap: '2rem',
+const Sidebar = styled.aside`
+  padding-top: 2rem;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: auto;
+  grid-gap: 2rem;
 
-  [`${BREAKPOINT_LG}`]: {
-    padding: '0 0 1rem 1rem',
-    border: 'none',
-    display: 'block'
-  },
-
-  [`${BREAKPOINT_MD}`]: {
-    gridTemplateColumns: 'max-content auto',
-    gridTemplateRows: 'auto'
-  }
-})
+${media.tablet`
+  grid-template-columns: max-content auto;
+  grid-template-rows: auto;
+  border-top: 0;
+`}
+${media.desktop`
+  padding: 0 0 1rem 1rem;
+  border-left: 1px solid ${theme.brand('border')};
+  display: block;
+`}
+${media.giant`
+  padding: 0 0 1rem 1rem;
+  border: none;
+  display: block;
+`}
+${media.huge``}
+`
 
 export default Sidebar

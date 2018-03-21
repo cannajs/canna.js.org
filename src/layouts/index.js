@@ -1,57 +1,72 @@
 import * as React from 'react'
-import { styled } from 'styletron-react'
+import styled from 'styled-components'
 import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
 import Header from './header'
-import Sidebar from '../elements/Sidebar'
-import SidebarLayout from './sidebar'
-import { BREAKPOINT_LG } from '../utils/breakpoints'
+import Sidebar from './sidebar'
+import Footer from './footer'
+import media from '../utils/breakpoints'
 import BackgroundImage from '../elements/BackgroundImage'
 
-import introImg from '../static/cannabis.jpg'
-import './critical.css'
+import introImg from '../static/images/cannabis.jpg'
 
-const Wrapper = styled('div', {
-  display: 'grid',
-  maxWidth: '1300px',
-  margin: '0 auto'
-})
+const Wrapper = styled.div`
+  display: grid;
+  margin: 0 auto;
+  height: inherit;
+  max-height: inherit;
+  align-content: flex-start;
+  width: 100%;
+  max-width: 1300px;
+`
 
-const Container = styled('section', {
-  display: 'grid',
-  margin: '0 auto',
-  padding: '0 1rem',
-  width: '100%',
-  gridTemplateRows: 'auto',
+const Container = styled.section`
+  display: grid;
+  margin: 0 auto;
+  padding: 1rem;
+  min-width: 100%;
+  grid-template-rows: auto;
 
-  [`${BREAKPOINT_LG}`]: {
-    gridTemplateColumns: 'auto calc(300px + 1rem)'
-  }
-})
+${media.desktop`
+  grid-template-columns: auto calc(300px + 1rem);
+`}
+${media.giant`
+`}
+${media.huge`
+  padding: 1rem 0;
+`}
+`
 
-const Primary = styled('div', {
-  paddingBottom: '1rem',
-  [`${BREAKPOINT_LG}`]: {
-    padding: 0
-  }
-})
+const Primary = styled.div`
+  padding-bottom: 1rem;
+  ${media.desktop`padding: 0`}
+`
+
+const Site = styled.div`
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-width: 100%;
+  position: relative;
+  min-height: 100vh;
+`
 
 class Layout extends React.Component {
-  render() {
+  render () {
     const { children } = this.props
     return (
-      <Wrapper>
-        <Header key='header' />
-        <Container key='container'>
-          <Primary>
-            <BackgroundImage src={introImg} />
-            {children()}
-          </Primary>
-          <Sidebar>
-            <SidebarLayout />
-          </Sidebar>
-        </Container>
-      </Wrapper>
+      <Site id='___root'>
+        <BackgroundImage src={introImg} />
+        <Wrapper>
+          <Header />
+          <Container>
+            <Primary>
+              {children()}
+            </Primary>
+            <Sidebar />
+          </Container>
+        </Wrapper>
+        <Footer />
+      </Site>
     )
   }
 }

@@ -9,15 +9,31 @@
    ========================================================================== */
 
 html {
-  background: pink;
+  background: white;
   font-size: 16px;
   line-height: 1.3;
-  height: 100vh;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+#___gatsby,
+#___root {
+  position: relative;
+  min-height: 100vh;
 }
 
 img {
   max-width: 100%;
   height: auto;
+}
+
+.headroom.headroom--pinned {
+  background-image: linear-gradient(top, transparent, white);
 }
 
 /*

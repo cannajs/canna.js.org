@@ -1,27 +1,28 @@
 import * as React from 'react'
-import { styled } from 'styletron-react'
+import styled from 'styled-components'
 import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
 import moment from 'moment'
 import Category from '../elements/Category'
 import Timestamp from '../elements/Timestamp'
+import { black } from '../utils/colors'
 
-const Title = styled('h1', {
-  textAlign: 'center'
-})
+const Title = styled.h1`
+  text-align: center
+`
 
-const Posts = styled('div', {
-  marginBottom: '1rem',
-  paddingBottom: '4rem',
-  borderBottom: '1px solid black',
-  ':last-child': {
-    borderBottom: 0
+const Posts = styled.div`
+  margin-bottom: 1rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid ${black};
+  &:last-child: {
+    border-bottom: 0;
   }
-})
+`
 
-const Label = styled('span', {
-  color: 'pink'
-})
+const Label = styled.span`
+  color: pink;
+`
 
 function Blog({ data, transition }) {
   const { edges: posts } = data.allMarkdownRemark

@@ -1,16 +1,17 @@
-import { styled } from 'styletron-react'
-import { BREAKPOINT_LG } from '../utils/breakpoints'
+import styled from 'styled-components'
 
-export const Tag = styled('li', {
-  display: 'inline',
-  listStyle: 'none',
-  padding: 0,
-  ':after': {
-    content: '", "'
-  },
-  ':last-child:after': {
-    content: '""'
+export const Tag = styled.li`
+  display: inline;
+  list-style: none;
+  padding: 0;
+
+  &:after {
+    content: ", "
   }
-})
+
+  &:last-child:after {
+    content: ""
+  }
+`
 
 export default Tag

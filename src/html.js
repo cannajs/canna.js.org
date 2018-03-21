@@ -1,7 +1,8 @@
 import * as React from 'react'
+import { TypographyStyle, GoogleFont } from 'react-typography'
+import typography from './utils/typography'
 
 let stylesStr
-let css
 
 if (process.env.NODE_ENV === 'production') {
   try {
@@ -13,6 +14,7 @@ if (process.env.NODE_ENV === 'production') {
 
 class Html extends React.Component {
   render() {
+    let css
     if (process.env.NODE_ENV === 'production') {
       css = (
         <style

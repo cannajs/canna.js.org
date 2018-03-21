@@ -1,21 +1,18 @@
 import Typography from 'typography'
 import CodePlugin from 'typography-plugin-code'
-import {
-  MOBILE_MEDIA_QUERY,
-  TABLET_MEDIA_QUERY,
-} from 'typography-breakpoint-constants'
+import theme from './ds'
 
 const options = {
-  baseFontSize: '16px',
-  baseLineHeight: 1.3,
-  blockMarginBottom: 1,
-  scaleRatio: 1.8,
+  baseFontSize: theme.get('type.baseFontSize'),
+  baseLineHeight: theme.get('type.baseLineHeight'),
+  bodyColor: theme.brand('text'),
+  bodyFontFamily: theme.get('fontFamily.body').split(','),
+  headerColor: theme.brand('heading'),
+  headerFontFamily: theme.get('fontFamily.heading').split(','),
+  scaleRatio: theme.get('modularScale.ratio'),
 
-  headerColor: '#222',
-  bodyColor: '#222',
-
-  headerFontFamily: ['Libre Baskerville', 'serif'],
-  bodyFontFamily: ['Lora', 'serif'],
+  headerWeight: '700',
+  bodyWeight: '400',
 
   googleFonts: [
     { name: 'Libre Baskerville', styles: ['400', '700'] },
@@ -25,13 +22,42 @@ const options = {
 
   overrideStyles: ({ rhythm, scale }, options) => {
     return {
+      'html': {
+        background: theme.brand('background'),
+        height: '100%'
+      },
+
+      'body': {
+        margin: 0,
+        minHeight: '100%',
+      },
+
+      '#___gatsby': {
+        position: 'relative',
+        minHeight: '100vh'
+      },
+
+      '.headroom.headroom--pinned': {
+        backgroundImage: `linear-gradient(top, transparent, ${theme.brand('contrastBackground')})`
+      },
+
+      'img': {
+        maxWidth: '100%',
+        height: 'auto',
+      },
+
+      'input#toggle:checked ~ ul': {
+        maxHeight: '18rem',
+        transition: 'max-height .5s cubic-bezier(.4, 0, 1, 1)',
+      },
+
       'h1, h2, h3, h4, h5, h6': {
-        lineHeight: 1.8,
+        lineHeight: theme.get('type.headingLineHeight'),
         marginBottom: 0
       },
 
       'a': {
-        color: '#222',
+        color: theme.brand('link'),
         textDecoration: 'none'
       },
 
@@ -40,26 +66,12 @@ const options = {
       },
 
       '[rel=category]': {
-        color: 'pink',
+        color: theme.brand('link'),
         textDecoration: 'underline'
       },
 
       '[rel=category]:hover': {
         textDecoration: 'none'
-      },
-
-      [TABLET_MEDIA_QUERY]: {
-        // Make baseFontSize on mobile 17px.
-        html: {
-          fontSize: `${17 / 16 * 100}%`
-        }
-      },
-
-      [MOBILE_MEDIA_QUERY]: {
-        // Make baseFontSize on mobile 16px.
-        html: {
-          fontSize: `${16 / 16 * 100}%`
-        }
       }
     }
   }

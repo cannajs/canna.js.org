@@ -5,7 +5,18 @@
  */
 const path = require('path')
 const _ = require('lodash')
-const { createFilePath } = require(`gatsby-source-filesystem`)
+const { createFilePath } = require('gatsby-source-filesystem')
+
+exports.onCreateNode = ({ node, boundActionCreators }) => {
+  const { createNodeField } = boundActionCreators
+  if (node.internal.type === 'File') {
+    createNodeField({
+      node,
+      name: 'slug',
+      value: path.basename(node.relativePath, '.md'),
+    })
+  }
+}
 
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators
@@ -47,10 +58,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
       const path = node.frontmatter.path
       createPage({
         path,
-        component: blogPostTemplate,
-        context: {
-          path
-        }
+        component: blogPostTemplate
       })
     })
 

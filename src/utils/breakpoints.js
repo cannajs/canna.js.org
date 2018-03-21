@@ -1,4 +1,21 @@
-export const BREAKPOINT_SM = '@media (min-width: 576px)'
-export const BREAKPOINT_MD = '@media (min-width: 768px)'
-export const BREAKPOINT_LG = '@media (min-width: 992px)'
-export const BREAKPOINT_XL = '@media (min-width: 1200px)'
+import { css } from 'styled-components'
+
+export const sizes = {
+  huge: 1300,
+  giant: 1170,
+  desktop: 992,
+  tablet: 768,
+  phone: 376
+}
+
+const media = Object.keys(sizes).reduce((accumulator, label) => {
+  const emSize = sizes[label] / 16
+  accumulator[label] = (...args) => css`
+    @media (min-width: ${emSize}em) {
+      ${css(...args)}
+    }
+  `
+  return accumulator
+}, {})
+
+export default media
