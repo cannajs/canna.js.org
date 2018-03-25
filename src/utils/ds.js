@@ -22,21 +22,24 @@ export const ds = {
   colors: {
     colorPalette: colors,
     brand: {
+      logo: black,
       background: white,
-      contrastBackground: mistyrose,
+      contrastBackground: pink,
       heading: darkgray,
+      contrastHeading: white,
       text: darkgray,
       contrastText: black,
       border: darkgray,
       contrastBorder: mistyrose,
-      link: contrastpink,
-      contrastLink: lightpink
+      link: darkgray,
+      contrastLink: white
     }
   },
   fontFamily: {
-    heading: 'Libre Baskerville, serif',
+    heading: 'Podkova, serif',
     body: 'Lora, serif',
-    sans: 'Roboto, sans-serif' 
+    serif: 'Bokor, serif',
+    sans: 'Arial, sans-serif'
   },
   modularScale: {
     base: 16,
@@ -51,10 +54,10 @@ export const ds = {
   zIndex
 }
 
-function DS(config) {
+function DS (config) {
   return new DesignSystem(config, {
     useModularScale: true,
-    fontSizeUnit: 'rem',
+    fontSizeUnit: 'rem'
   })
 }
 

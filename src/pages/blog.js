@@ -24,7 +24,7 @@ const Label = styled.span`
   color: pink;
 `
 
-function Blog({ data, transition }) {
+function Blog ({ data, transition }) {
   const { edges: posts } = data.allMarkdownRemark
   return (
     <div style={transition && transition.style}>

@@ -1,9 +1,8 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import media from '../utils/breakpoints'
 import Link from 'gatsby-link'
+import theme from '../utils/ds'
 import Footer from '../elements/Footer'
-import Ad from '../elements/Ad'
 
 const Grid = styled.div`
   display: grid;
@@ -15,14 +14,24 @@ const Column = styled.div`
   padding: 4rem 2rem 0;
 `
 
-const Title = styled.h3``
+const Title = styled.h3`
+  color: ${theme.brand('contrastHeading')};
+  a {
+    color: ${theme.brand('contrastHeading')};
+  }
+`
 
 const List = styled.ul`
   list-style: none;
   margin: 0;
 `
 
-const Item = styled.li``
+const Item = styled.li`
+  color: ${theme.brand('contrastLink')};
+  a {
+    color: ${theme.brand('contrastLink')};
+  }
+`
 
 const Copyright = styled.div`
   display: grid;
@@ -47,19 +56,19 @@ export const FooterLayout = () => {
             <Title>Bongs and Batteries</Title>
             <List>
               <Item>
-                <Link to="/">About</Link>
+                <Link to='/'>About</Link>
               </Item>
               <Item>
-                <Link to="/">Contact</Link>
+                <Link to='/'>Contact</Link>
               </Item>
               <Item>
-                <Link to="/">Feed</Link>
+                <Link to='/'>Feed</Link>
               </Item>
               <Item>
-                <Link to="/">Sponsors</Link>
+                <Link to='/'>Sponsors</Link>
               </Item>
               <Item>
-                <Link to="/">Legal</Link>
+                <Link to='/'>Legal</Link>
               </Item>
             </List>
           </Section>
@@ -69,19 +78,19 @@ export const FooterLayout = () => {
             <Title>Interests</Title>
             <List>
               <Item>
-                <Link to="/">Gear</Link>
+                <Link to='/'>Gear</Link>
               </Item>
               <Item>
-                <Link to="/">Strains</Link>
+                <Link to='/'>Strains</Link>
               </Item>
               <Item>
-                <Link to="/">Law</Link>
+                <Link to='/'>Law</Link>
               </Item>
               <Item>
-                <Link to="/">Tech</Link>
+                <Link to='/'>Tech</Link>
               </Item>
               <Item>
-                <Link to="/">Science</Link>
+                <Link to='/'>Science</Link>
               </Item>
             </List>
           </Section>
@@ -91,22 +100,22 @@ export const FooterLayout = () => {
             <Title>Connect</Title>
             <List>
               <Item>
-                <Link to="/">Facebook</Link>
+                <Link to='/'>Facebook</Link>
               </Item>
               <Item>
-                <Link to="/">Twitter</Link>
+                <Link to='/'>Twitter</Link>
               </Item>
               <Item>
-                <Link to="/">Pinterest</Link>
+                <Link to='/'>Pinterest</Link>
               </Item>
               <Item>
-                <Link to="/">Instagram</Link>
+                <Link to='/'>Instagram</Link>
               </Item>
               <Item>
-                <Link to="/">YouTube</Link>
+                <Link to='/'>YouTube</Link>
               </Item>
               <Item>
-                <Link to="/">Feed</Link>
+                <Link to='/'>Feed</Link>
               </Item>
             </List>
           </Section>

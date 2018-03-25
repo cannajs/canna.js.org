@@ -8,7 +8,7 @@ import Paragraph from '../elements/Paragraph'
 import Timestamp from '../elements/Timestamp'
 import Category from '../elements/Category'
 
-export default function Template({
+export default function Template ({
   data
 }) {
   const post = data.markdownRemark

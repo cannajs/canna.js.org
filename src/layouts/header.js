@@ -3,12 +3,11 @@ import Headroom from 'react-headroom'
 import styled from 'styled-components'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
+import hex2rgba from 'hex2rgba'
 import media from '../utils/breakpoints'
-import { ZINDEX_FIXED } from '../utils/zindex'
 import theme from '../utils/ds'
 
-const Grid = styled.header`
-  background-color: white;
+const Grid = styled.div`
   padding: 2rem 1rem 0;
   border-bottom: 1px solid ${theme.brand('border')};
 ${media.desktop`
@@ -22,16 +21,23 @@ ${media.huge`
 `}
 `
 
+const Wrapper = styled.header`
+  max-width: 1300px;
+  margin: 0 auto;
+  background-image: -webkit-linear-gradient(top, transparent, ${theme.brand('background')});
+  background-image: linear-gradient(top, transparent, ${theme.brand('background')});
+`
+
 const Logo = styled.h1`
   transition: all .5s;
   margin: 0;
   color: ${theme.brand('heading')};
 `
 
-// color: 'transparent',
-// background: 'url("https://phandroid.s3.amazonaws.com/wp-content/uploads/2014/05/rainbow-nebula.jpg") repeat',
-// backgroundPosition: '40% 50%',
-// backgroundClip: 'text',
+// color: transparent;
+// background: url("https://phandroid.s3.amazonaws.com/wp-content/uploads/2014/05/rainbow-nebula.jpg") repeat;
+// background-position: 40% 50%;
+// background-clip: text;
 
 const NavContainer = styled.div`
   width: 100%;
@@ -61,10 +67,14 @@ ${media.desktop`
 `
 
 const NavItem = styled.li`
+  padding: 0;
+
   a {
     font-family: ${theme.get('fontFamily.sans')};
     text-transform: uppercase;
-    font-size: 12px;
+    font-size: 20px;
+    font-weight: 700;
+    color: ${theme.brand('link')};
   }
 `
 
@@ -77,8 +87,8 @@ const Toggle = styled.label`
   user-select: none;
   position: absolute;
   right: 1rem;
-  top: 1.5rem;
-  z-index: ${ZINDEX_FIXED};
+  bottom: calc(1rem / 2);
+  z-index: ${theme.z('fixed')};
   font-size: 2rem;
   display: block;
 
@@ -94,26 +104,28 @@ ${media.desktop`
 const Header = () => (
   <React.Fragment>
     <Headroom>
-      <Grid>
-        <Link to='/'>
-          <Logo>
-            Bongs and Batteries
-          </Logo>
-        </Link>
-        <NavContainer>
-          <Input type='checkbox' id='toggle' />
-          <Toggle htmlFor='toggle'>
-            <span>☻</span>
-          </Toggle>
-          <Nav>
-            <NavItem><Link to='/info'>info</Link></NavItem>
-            <NavItem><Link to='/rss'>feed</Link></NavItem>
-            <NavItem><Link to='/blog'>blog</Link></NavItem>
-            <NavItem><Link to='/category'>categories</Link></NavItem>
-            <NavItem><Link to='/tags'>tags</Link></NavItem>
-          </Nav>
-        </NavContainer>
-      </Grid>
+      <Wrapper>
+        <Grid>
+          <Link to='/'>
+            <Logo>
+              Bongs and Batteries
+            </Logo>
+          </Link>
+          <NavContainer>
+            <Input type='checkbox' id='toggle' />
+            <Toggle htmlFor='toggle'>
+              <span>☻</span>
+            </Toggle>
+            <Nav>
+              <NavItem><Link to='/info'>info</Link></NavItem>
+              <NavItem><Link to='/rss'>feed</Link></NavItem>
+              <NavItem><Link to='/blog'>blog</Link></NavItem>
+              <NavItem><Link to='/category'>categories</Link></NavItem>
+              <NavItem><Link to='/tags'>tags</Link></NavItem>
+            </Nav>
+          </NavContainer>
+        </Grid>
+      </Wrapper>
     </Headroom>
   </React.Fragment>
 )

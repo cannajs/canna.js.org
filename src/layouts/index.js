@@ -1,7 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import Helmet from 'react-helmet'
-import Link from 'gatsby-link'
 import Header from './header'
 import Sidebar from './sidebar'
 import Footer from './footer'

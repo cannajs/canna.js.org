@@ -15,7 +15,7 @@ const Ad = styled.div`
   letter-spacing: 1px;
   text-transform: uppercase;
 ${media.desktop`
-    margin: 0 auto 1rem;
+  margin: 0 auto 1rem;
 `}
 `
 
