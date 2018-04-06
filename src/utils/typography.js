@@ -15,9 +15,10 @@ const options = {
   bodyWeight: '400',
 
   googleFonts: [
-    { name: 'Bokor, cursive', styles: ['400'] },
+    { name: 'Bokor', styles: ['400'] },
     { name: 'Lora', styles: ['400', '700'] },
-    { name: 'Podkova', styles: ['400', '700'] }
+    { name: 'Podkova', styles: ['400', '700'] },
+    { name: 'Roboto', styles: ['400', '700'] }
   ],
 
   overrideStyles: ({ rhythm, scale }, options) => {
@@ -58,7 +59,8 @@ const options = {
       },
 
       'a:hover': {
-        textDecoration: 'underline'
+        textDecoration: 'underline',
+        textDecorationStyle: 'wavy'
       },
 
       '[rel=category]': {

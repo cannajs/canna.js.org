@@ -36,10 +36,11 @@ export const ds = {
     }
   },
   fontFamily: {
-    heading: 'Podkova, serif',
-    body: 'Lora, serif',
-    serif: 'Bokor, serif',
-    sans: 'Arial, sans-serif'
+    logo: 'Lora,serif',
+    heading: 'Bokor,serif',
+    body: 'Lora,serif',
+    serif: 'Bokor,serif',
+    sans: 'Podkova,sans-serif'
   },
   modularScale: {
     base: 16,

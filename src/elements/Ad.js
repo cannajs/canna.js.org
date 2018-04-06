@@ -13,6 +13,7 @@ const Ad = styled.div`
   color: ${theme.brand('text')};
   font-size: 14px;
   letter-spacing: 1px;
+  font-family: ${theme.get('fontFamily.body')};
   text-transform: uppercase;
 ${media.desktop`
   margin: 0 auto 1rem;

@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import hex2rgba from 'hex2rgba'
+import A from '../elements/A'
+import Logo from '../elements/Logo'
 import media from '../utils/breakpoints'
 import theme from '../utils/ds'
 
@@ -26,12 +28,6 @@ const Wrapper = styled.header`
   margin: 0 auto;
   background-image: -webkit-linear-gradient(top, transparent, ${theme.brand('background')});
   background-image: linear-gradient(top, transparent, ${theme.brand('background')});
-`
-
-const Logo = styled.h1`
-  transition: all .5s;
-  margin: 0;
-  color: ${theme.brand('heading')};
 `
 
 // color: transparent;
@@ -61,7 +57,7 @@ ${media.desktop`
   max-height: auto;
   overflow: initial;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   max-width: 400px;
 `}
 `
@@ -69,12 +65,13 @@ ${media.desktop`
 const NavItem = styled.li`
   padding: 0;
 
-  a {
+  ${A} {
     font-family: ${theme.get('fontFamily.sans')};
     text-transform: uppercase;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 700;
     color: ${theme.brand('link')};
+    letter-spacing: 1px;
   }
 `
 
