@@ -1,9 +1,10 @@
 ---
-path: "/blog/first-post"
+path: "/alaskan-thunder-fuck"
 date: "2017-07-12T17:12:33.962Z"
-title: "My 5 Favorite Herb Tools"
-tags: ["grinders", "pipes", "bubbler"]
-categories: ["gear"]
+title: "Alaskan Thunder Fuck"
+tags: ["sativa"]
+categories: ["strains"]
+thumbnail: "http://picsum.photos/600/250"
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras semper libero nec sapien vestibulum, congue fringilla risus facilisis. Sed sodales, sapien et accumsan viverra, nunc odio vulputate arcu, ac gravida est tortor a ante. Nullam aliquet feugiat mattis. Nulla aliquam nisl feugiat risus sollicitudin cursus. Nunc tristique mi pharetra sapien faucibus imperdiet. Nunc blandit fringilla fermentum. Vestibulum nibh nisi, consequat quis leo vitae, maximus eleifend augue. Nam feugiat lectus non rhoncus maximus. Aenean efficitur ex sed erat scelerisque tincidunt. Nam facilisis neque nunc, non bibendum ipsum tristique ac. Vestibulum mattis posuere tempor. Morbi orci lectus, venenatis non dapibus nec, bibendum at lorem. Vivamus at ex vitae leo ornare ullamcorper in id nisl. Integer volutpat augue massa, rhoncus rhoncus nunc pulvinar ut. Ut eu ex eget mi vehicula tincidunt id a tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
 

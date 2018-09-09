@@ -1,26 +1,50 @@
-import React from 'react'
+import * as React from 'react'
 import kebabCase from 'lodash/kebabcase'
 import Helmet from 'react-helmet'
-import Link from 'gatsby-link'
+import styled from 'styled-components'
+import { Link, graphql } from 'gatsby'
+import Layout from '../components/layout'
+
+const UL = styled.div`
+  display: grid;
+  grid-gap: 1rem;
+  grid-auto-flow: column;
+`
+const LI = styled.div`
+  display: flex;
+  width: 100px;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid;
+`
+
+const H1 = styled.h1`
+  margin-bottom: 1rem;
+`
+
+const CategoryHeader = H1.extend`
+  border-bottom: 1px solid;
+`
 
 const CategoriesPage = ({
   data: { allMarkdownRemark: { group }, site: { siteMetadata: { title } } },
 }) => (
-  <div>
+  <Layout>
     <Helmet title={title} />
     <div>
-      <h1>Categories</h1>
-      <ul>
+      <CategoryHeader>Categories</CategoryHeader>
+      <UL>
         {group.map(category => (
-          <li key={category.fieldValue}>
+          <LI key={category.fieldValue}>
             <Link to={`/category/${kebabCase(category.fieldValue)}/`}>
-              {category.fieldValue} ({category.totalCount})
+              {category.fieldValue}
             </Link>
-          </li>
+          </LI>
         ))}
-      </ul>
+      </UL>
     </div>
-  </div>
+  </Layout>
 )
 
 export default CategoriesPage

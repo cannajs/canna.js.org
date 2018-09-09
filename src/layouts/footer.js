@@ -1,23 +1,32 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import Link from 'gatsby-link'
+import { Link } from 'gatsby'
+import media from '../utils/breakpoints'
 import theme from '../utils/ds'
+import Copyright from '../elements/Copyright'
 import Footer from '../elements/Footer'
 
 const Grid = styled.div`
   display: grid;
   grid-gap: 0;
-  grid-template-columns: 1fr;
+  grid-template-columns: 50% 50%;
+${media.desktop`
+  grid-template-columns: 33.33% 33.33% 33.33%;
+`}
 `
 
 const Column = styled.div`
-  padding: 4rem 2rem 0;
+  padding: ${props => props.padding ? props.padding : ''};
+  margin: ${props => props.margin ? props.margin : '1rem 2rem 0'};
 `
 
 const Title = styled.h3`
-  color: ${theme.brand('contrastHeading')};
+  font-family: ${theme.get('fontFamily.footer.title')};
+  color: ${theme.brand('contrastBorder')};
+  margin: 1rem 0;
+
   a {
-    color: ${theme.brand('contrastHeading')};
+    color: ${theme.brand('contrastBorder')};
   }
 `
 
@@ -27,16 +36,12 @@ const List = styled.ul`
 `
 
 const Item = styled.li`
-  color: ${theme.brand('contrastLink')};
+  font-family: ${theme.get('fontFamily.footer.body')};
+  color: ${theme.brand('contrastText')};
+  font-size: 18px;
   a {
-    color: ${theme.brand('contrastLink')};
+    color: ${theme.brand('contrastText')};
   }
-`
-
-const Copyright = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  padding: 2rem 1rem;
 `
 
 const Small = styled.span`
@@ -53,7 +58,7 @@ export const FooterLayout = () => {
       <Grid>
         <Column>
           <Section>
-            <Title>Bongs and Batteries</Title>
+            <Title>420 • bytes</Title>
             <List>
               <Item>
                 <Link to='/'>About</Link>
@@ -84,13 +89,16 @@ export const FooterLayout = () => {
                 <Link to='/'>Strains</Link>
               </Item>
               <Item>
-                <Link to='/'>Law</Link>
+                <Link to='/'>Food</Link>
               </Item>
               <Item>
                 <Link to='/'>Tech</Link>
               </Item>
               <Item>
                 <Link to='/'>Science</Link>
+              </Item>
+              <Item>
+                <Link to='/'>Law</Link>
               </Item>
             </List>
           </Section>
@@ -99,9 +107,6 @@ export const FooterLayout = () => {
           <Section>
             <Title>Connect</Title>
             <List>
-              <Item>
-                <Link to='/'>Facebook</Link>
-              </Item>
               <Item>
                 <Link to='/'>Twitter</Link>
               </Item>
@@ -115,14 +120,14 @@ export const FooterLayout = () => {
                 <Link to='/'>YouTube</Link>
               </Item>
               <Item>
-                <Link to='/'>Feed</Link>
+                <Link to='/feed'>Feed</Link>
               </Item>
             </List>
           </Section>
         </Column>
       </Grid>
       <Copyright>
-        <Small>&copy; {currentYear} Bongs and Batteries. Some rights reserved. ☻</Small>
+        <Small>&copy; {currentYear} 420bytes, LLC. Some rights reserved. ☻</Small>
       </Copyright>
     </Footer>
   )

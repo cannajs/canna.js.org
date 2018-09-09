@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+// import ScaledImg from './ScaledImg'
 
 const Img = styled.img`
   max-width: 100%;

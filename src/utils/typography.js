@@ -18,7 +18,20 @@ const options = {
     { name: 'Bokor', styles: ['400'] },
     { name: 'Lora', styles: ['400', '700'] },
     { name: 'Podkova', styles: ['400', '700'] },
-    { name: 'Roboto', styles: ['400', '700'] }
+    { name: 'Roboto', styles: ['400', '700'] },
+    { name: 'Cantarell', styles: ['400', '700'] },
+    { name: 'Comfortaa', styles: ['400', '700'] },
+    { name: 'Josefin Slab', styles: ['400', '700'] },
+    { name: 'Maven Pro', styles: ['400', '700'] },
+    { name: 'Markazi Text', styles: ['400', '600'] },
+    { name: 'Playfair Display', styles: ['400', '600'] },
+    { name: 'Glegoo', styles: ['400', '600'] },
+    { name: 'Fjalla One', styles: ['400', '600'] },
+    { name: 'Karla', styles: ['400', '600'] },
+    { name: 'IBM Plex Sans Condensed', styles: ['400', '600'] },
+    { name: 'Unna', styles: ['200', '400', '600'] },
+    { name: 'Maitree', styles: ['200', '400', '600'] },
+    { name: 'Petrona', styles: ['200', '400', '600'] }
   ],
 
   overrideStyles: ({ rhythm, scale }, options) => {
@@ -50,7 +63,8 @@ const options = {
 
       'h1, h2, h3, h4, h5, h6': {
         lineHeight: theme.get('type.headingLineHeight'),
-        marginBottom: 0
+        marginBottom: 0,
+        textTransform: 'uppercase'
       },
 
       'a': {
@@ -58,18 +72,9 @@ const options = {
         textDecoration: 'none'
       },
 
-      'a:hover': {
-        textDecoration: 'underline',
-        textDecorationStyle: 'wavy'
-      },
-
-      '[rel=category]': {
-        color: theme.brand('link'),
-        textDecoration: 'underline'
-      },
-
-      '[rel=category]:hover': {
-        textDecoration: 'none'
+      '.headroom': {
+        backgroundColor: 'rgba(255, 255, 255, .9)',
+        width: '100%'
       }
     }
   }

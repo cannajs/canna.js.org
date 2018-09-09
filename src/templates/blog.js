@@ -1,12 +1,18 @@
 import * as React from 'react'
 import Helmet from 'react-helmet'
-import Link from 'gatsby-link'
+import { Link, graphql } from 'gatsby'
 import moment from 'moment'
+import styled from 'styled-components'
 import Tags from '../elements/Tags'
 import Tag from '../elements/Tag'
 import Paragraph from '../elements/Paragraph'
 import Timestamp from '../elements/Timestamp'
 import Category from '../elements/Category'
+import Layout from '../components/layout'
+
+const H1 = styled.h1`
+  margin-bottom: 1rem;
+`
 
 export default function Template ({
   data
@@ -18,21 +24,20 @@ export default function Template ({
   const category = meta.categories.join('')
 
   return (
-    <div>
-      <Category>
-        <Link rel='category' to={`/category/${category}`} title={category}>
-          {category}
-        </Link>
-      </Category>
-      <h1>{title}</h1>
+    <Layout>
       <Timestamp>
-        Posted by <strong>Editor</strong> on <strong><time dateTime={post.frontmatter.date}>{moment(post.frontmatter.date).format('MMMM Do YYYY • h:mm:ss a')}</time></strong>
+        <strong>
+          <time dateTime={post.frontmatter.date}>
+            {moment(post.frontmatter.date).format('MMMM Do YYYY • h:mm a')}
+          </time>
+        </strong>
       </Timestamp>
+      <H1>{title}</H1>
       <Paragraph>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </Paragraph>
       <Tags>
-        <strong>Find more content about</strong> {tags.map(tag => (
+        <strong>Read more about</strong> {tags.map(tag => (
           <Tag key={tag}>
             <a href={`/tags/${tag}`} title={tag}>
               {tag}
@@ -41,7 +46,13 @@ export default function Template ({
         ))}
         &nbsp;&nbsp;☻
       </Tags>
-    </div>
+      <Category>
+        Filed to &nbsp;
+        <Link rel='category' to={`/category/${category}`} title={category}>
+          {category}
+        </Link>
+      </Category>
+    </Layout>
   )
 }
 

@@ -13,7 +13,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 class Html extends React.Component {
-  render() {
+  render () {
     let css
     if (process.env.NODE_ENV === 'production') {
       css = (
@@ -37,6 +37,7 @@ class Html extends React.Component {
         </head>
         <body>
           <div
+            key='body'
             id='___gatsby'
             dangerouslySetInnerHTML={{ __html: this.props.body }}
           />
@@ -47,4 +48,4 @@ class Html extends React.Component {
   }
 }
 
-module.exports = Html
+export default Html

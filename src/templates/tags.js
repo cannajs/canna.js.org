@@ -1,28 +1,38 @@
-import React from 'react'
-import Link from 'gatsby-link'
+import * as React from 'react'
+import { graphql, Link } from 'gatsby'
+import styled from 'styled-components'
+import Layout from '../components/layout'
+import Card from '../elements/Card'
 
-const Tags = ({ pathContext, data }) => {
+const H1 = styled.h1`
+  margin-bottom: 1rem;
+`
+
+const Container = styled.div`
+  margin-bottom: 1rem;
+`
+
+const Tags = ({ pageContext, data }) => {
   if (!data) return null
 
-  const { tag } = pathContext
+  const { tag } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
   const tagHeader = `${totalCount} post${totalCount === 1 ? '' : 's'} tagged with "${tag}"`
 
   return (
-    <div>
-      <h1>{tagHeader}</h1>
-      <ul>
-        {edges.map(({ node }) => {
-          const { path, title } = node.frontmatter
-          return (
-            <li key={path}>
-              <Link to={path}>{title}</Link>
-            </li>
-          )
-        })}
-      </ul>
+    <Layout>
+      <H1>{tagHeader}</H1>
+      {edges.map(({ node }) => {
+        const { path, title, thumbnail } = node.frontmatter
+        const { excerpt } = node
+        return (
+          <Container>
+            <Card title={title} content={excerpt} thumbnail={thumbnail} path={path} />
+          </Container>
+        )
+      })}
       <Link to='/tags'>All tags</Link>
-    </div>
+    </Layout>
   )
 }
 
@@ -38,9 +48,12 @@ export const pageQuery = graphql`
       totalCount
       edges {
         node {
+          excerpt(pruneLength: 600)
+          id
           frontmatter {
             title
-            path
+            path,
+            thumbnail
           }
         }
       }

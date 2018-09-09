@@ -1,15 +1,28 @@
-import React from 'react'
+import * as React from 'react'
 import kebabCase from 'lodash/kebabcase'
 import Helmet from 'react-helmet'
-import Link from 'gatsby-link'
+import { Link, graphql } from 'gatsby'
+import styled from 'styled-components'
+import Layout from '../components/layout'
+
+const UL = styled.div``
+const LI = styled.div``
+
+const H1 = styled.h1`
+  margin-bottom: 1rem;
+`
+
+const TagsHeader = H1.extend`
+  border-bottom: 1px solid;
+`
 
 const TagsPage = ({
-  data: { allMarkdownRemark: { group }, site: { siteMetadata: { title } } },
+  data: { allMarkdownRemark: { group }, site: { siteMetadata: { title } } }
 }) => (
-  <div>
+  <React.Fragment>
     <Helmet title={title} />
-    <div>
-      <h1>Tags</h1>
+    <Layout>
+      <TagsHeader>Tags</TagsHeader>
       <ul>
         {group.map(tag => (
           <li key={tag.fieldValue}>
@@ -19,8 +32,8 @@ const TagsPage = ({
           </li>
         ))}
       </ul>
-    </div>
-  </div>
+    </Layout>
+  </React.Fragment>
 )
 
 export default TagsPage

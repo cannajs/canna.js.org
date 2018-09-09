@@ -12,19 +12,4 @@ const Link = styled.a`
   overflow: hidden;
 `
 
-const A = Link.extend`
-  span:before {
-    position: absolute;
-    white-space: nowrap;
-    top: 100%;
-    content: attr(data-hover);
-    font-weight: 500;
-  }
-
-  ${Link}:hover span,
-  ${Link}:focus span {
-    transform: translateY(-100%);
-  }
-`
-
-export default A
+export default Link

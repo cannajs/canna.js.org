@@ -6,6 +6,7 @@ const Logo = styled.h1`
   margin: 0;
   color: ${theme.brand('heading')};
   font-family: ${theme.get('fontFamily.logo')};
+  line-height: 2rem;
 `
 
 export default Logo

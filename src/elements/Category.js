@@ -4,13 +4,17 @@ import theme from '../utils/ds'
 const Category = styled.div`
   position: relative;
   display: flex;
-  padding: .5rem 1rem;
-  background-color: ${theme.brand('contrastBackground')};
-  margin: 0 0 1rem;
+  padding: 1rem 0 0;
+  margin: 0;
   justify-content: flex-end;
   font-family: ${theme.get('fontFamily.sans')};
+  border-top: 1px solid #000;
   text-transform: uppercase;
   font-size: 13px;
+
+  a {
+    border-bottom: 1px solid;
+  }
 `
 
 export default Category

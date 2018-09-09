@@ -1,7 +1,6 @@
 module.exports = {
-  polyfill: true,
   siteMetadata: {
-    title: 'Bongs and Batteries',
+    title: '420bytes',
     description: '',
     siteUrl: ''
   },
@@ -51,16 +50,16 @@ module.exports = {
     //     siteUrl: ''
     //   }
     // },
-    {
-      resolve: 'gatsby-plugin-manifest',
-      options: {
-        name: 'Bongs and Batteries',
-        short_name: 'BandB',
-        start_url: '/',
-        background_color: '#660000',
-        theme_color: '#ffc0cb'
-      }
-    },
+    // {
+    //   resolve: 'gatsby-plugin-manifest',
+    //   options: {
+    //     name: 'Bongs and Batteries',
+    //     short_name: 'BandB',
+    //     start_url: '/',
+    //     background_color: '#660000',
+    //     theme_color: '#ffc0cb'
+    //   }
+    // },
     // 'gatsby-plugin-feed',
     // {
     //   resolve: 'gatsby-plugin-google-tagmanager',

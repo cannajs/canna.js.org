@@ -5,21 +5,21 @@
  */
 const path = require('path')
 const _ = require('lodash')
-const { createFilePath } = require('gatsby-source-filesystem')
+// const { createFilePath } = require('gatsby-source-filesystem')
 
-exports.onCreateNode = ({ node, boundActionCreators }) => {
-  const { createNodeField } = boundActionCreators
+exports.onCreateNode = ({ node, actions }) => {
+  const { createNodeField } = actions
   if (node.internal.type === 'File') {
     createNodeField({
       node,
       name: 'slug',
-      value: path.basename(node.relativePath, '.md'),
+      value: path.basename(node.relativePath, '.md')
     })
   }
 }
 
-exports.createPages = ({ boundActionCreators, graphql }) => {
-  const { createPage } = boundActionCreators
+exports.createPages = ({ actions, graphql }) => {
+  const { createPage } = actions
 
   const blogPostTemplate = path.resolve('src/templates/blog.js')
   const categoryTemplate = path.resolve('src/templates/category.js')
@@ -101,6 +101,5 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         }
       })
     })
-
   })
 }

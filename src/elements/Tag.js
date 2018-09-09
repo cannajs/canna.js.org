@@ -5,6 +5,10 @@ export const Tag = styled.li`
   list-style: none;
   padding: 0;
 
+  a {
+    border-bottom: 1px solid;
+  }
+
   &:after {
     content: ", "
   }

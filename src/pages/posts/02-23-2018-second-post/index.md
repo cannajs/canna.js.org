@@ -2,8 +2,9 @@
 path: "/blog/second-post"
 date: "2017-07-12T17:12:33.962Z"
 title: "Marijuana Legalization in New York"
-tags: ["legalization", "new york", "law"]
-categories: ["politics"]
+tags: ["new york"]
+categories: ["law"]
+thumbnail: "http://picsum.photos/800/540"
 ---
 Nam at purus lorem. Aenean ac sapien iaculis, suscipit lectus non, pulvinar dolor. Nam pretium enim vel dolor congue accumsan et semper enim. Nulla eu sapien sit amet velit fringilla venenatis. Vestibulum vel tortor sit amet odio dapibus lobortis eget quis lorem. Mauris vel quam imperdiet, consequat eros non, viverra neque. Duis et orci a massa mattis convallis. Fusce in felis quis felis vehicula volutpat. Nunc sed arcu eu mi laoreet viverra. Nullam dictum pulvinar lectus ut viverra. Praesent vitae ex magna.
 
