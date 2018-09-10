@@ -1,13 +1,13 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
-import Timestamp from '../elements/Timestamp'
-import ReadMore from '../elements/ReadMore'
-import Img from '../elements/Img'
-import Title from '../elements/Title'
-import Paragraph from '../elements/Paragraph'
-import Focus from '../elements/Focus'
-import Label from '../elements/Label'
+import Timestamp from '../components/elements/Timestamp'
+import ReadMore from '../components/elements/ReadMore'
+import Img from '../components/elements/Img'
+import Title from '../components/elements/Title'
+import Paragraph from '../components/elements/Paragraph'
+import Focus from '../components/elements/Focus'
+import Label from '../components/elements/Label'
 
 const Content = styled.div``
 
@@ -52,8 +52,7 @@ const StrainOfTheDay = () => {
 
 export default StrainOfTheDay
 
-
-{/* <SidebarBox>
+{ /* <SidebarBox>
   <Headline>Review: Strains</Headline>
   <Grid>
     <Content>
@@ -66,8 +65,8 @@ export default StrainOfTheDay
       </ReadMore>
     </Content>
   </Grid>
-</SidebarBox> */}
-{/* <SidebarBox>
+</SidebarBox> */ }
+{ /* <SidebarBox>
   <Headline>Learn: Glossary</Headline>
   <Grid>
     <Content>
@@ -83,8 +82,8 @@ export default StrainOfTheDay
       </ReadMore>
     </Content>
   </Grid>
-</SidebarBox> */}
-{/* <SidebarBox>
+</SidebarBox> */ }
+{ /* <SidebarBox>
   <Headline>Social: Hash</Headline>
   <Grid>
     <Content>
@@ -98,8 +97,8 @@ export default StrainOfTheDay
       </ReadMore>
     </Content>
   </Grid>
-</SidebarBox> */}
-{/* <SidebarBox>
+</SidebarBox> */ }
+{ /* <SidebarBox>
   <Headline>Listen: High Beats</Headline>
   <Grid>
     <Content>
@@ -116,4 +115,4 @@ export default StrainOfTheDay
       </ReadMore>
     </Content>
   </Grid>
-</SidebarBox> */}
+</SidebarBox> */ }

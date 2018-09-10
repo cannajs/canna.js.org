@@ -10,7 +10,7 @@ const mkdirp = require('mkdirp')
 const timeStamp = require('time-stamp')
 
 const database = path.join(__dirname, '../data/cannabis.csv')
-const targetDirectory = path.join(__dirname, '../src/pages/posts')
+const targetDirectory = path.join(__dirname, '../blog')
 
 let counter = 0
 
@@ -19,7 +19,7 @@ fs.createReadStream(database)
   .pipe(through2.obj(function (chunk, _, cb) {
     const strainName = chunk[0]
     const strainNameKebabCase = kebabCase(strainName)
-    if (counter < 300) {
+    if (counter < 20) {
       this.push({
         strainName: strainName.replace('-', ' '),
         strainNameKebabCase: strainNameKebabCase,
@@ -38,8 +38,8 @@ fs.createReadStream(database)
 path: "/strains/${strainNameKebabCase}"
 date: "${timestamp}"
 title: "${strainName}"
-tags: ["${strainType}"]
-categories: ["strains"]
+tags: "${strainType}"
+categories: "strains"
 thumbnail: "${thumbnailUrl}"
 ---
 ${strainDescription}`

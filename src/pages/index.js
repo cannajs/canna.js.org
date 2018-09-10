@@ -1,74 +1,52 @@
 import * as React from 'react'
 import { Link, graphql } from 'gatsby'
-import styled from 'styled-components'
-import Helmet from 'react-helmet'
-import moment from 'moment'
-import Layout from '../components/layout'
-import Category from '../elements/Category'
-import Timestamp from '../elements/Timestamp'
-import FeaturedPosts from '../elements/FeaturedPosts'
-import Card from '../elements/Card'
+import Layout from '../components/layouts'
+import Posts from '../components/blog/posts'
+import FeaturedPosts from '../components/elements/FeaturedPosts'
 
-const H1 = styled.h1``
+export default function Index ({ data }) {
+  if (!data) return null
 
-const Posts = styled.div`
-  margin-bottom: 1rem;
-  padding-bottom: 4rem;
-`
+  let { edges: posts } = data.allMarkdownRemark
+  let { description } = data.site.siteMetadata
 
-const Label = styled.span``
+  posts = posts.map(post => post.node)
 
-function Blog ({ data, transition }) {
-  const { edges: posts } = data.allMarkdownRemark
   return (
     <Layout>
       <FeaturedPosts />
-      <div>
-        {posts
-          .filter(post => post.node.frontmatter.title.length > 0)
-          .map(({ node: post }) => {
-            const meta = post.frontmatter
-            const title = meta.title
-            const category = meta.categories
-            const thumbnail = meta.thumbnail
-            return (
-              <Posts key={post.id}>
-                <Category>
-                  <Label>Filed to</Label>&nbsp;<Link rel='category' to={`/category/${category}`} title={category}>{category}</Link>
-                </Category>
-                <Link to={post.frontmatter.path}>
-                  <H1>{title}</H1>
-                </Link>
-                <Timestamp>
-                  <strong><time dateTime={post.frontmatter.date}>{moment(post.frontmatter.date).format('MMMM Do YYYY • h:mm a')}</time></strong>
-                </Timestamp>
-                <Card content={post.excerpt} thumbnail={thumbnail} path={post.frontmatter.path} />
-              </Posts>
-            )
-          })}
-      </div>
+      <Posts posts={posts} />
+      <Link to='/page/2'>← Previous</Link>
     </Layout>
   )
 }
 
 export const pageQuery = graphql`
-  query BlogQuery {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+  query IndexQuery {
+    site {
+      siteMetadata {
+        description
+      }
+    }
+    allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      limit: 5
+      filter: { frontmatter: { draft: { ne: true } } }
+    ) {
       edges {
         node {
-          excerpt(pruneLength: 600)
+          excerpt(pruneLength: 250)
           id
           frontmatter {
             title
-            date(formatString: "YYYY-MM-DDTHH:mm:ss.sssZ")
+            date(formatString: "MMMM DD, YYYY")
             path
-            categories,
-            thumbnail
+            tags
+            categories
+            draft
           }
         }
       }
     }
   }
 `
-
-export default Blog
