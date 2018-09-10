@@ -1,5 +1,5 @@
 import React from 'react'
-import Post from './post'
+import Post from './Post'
 
 const Posts = ({ posts }) => (
   <div>

@@ -1,8 +1,6 @@
 import * as React from 'react'
+import { graphql, Link } from 'gatsby'
 import styled from 'styled-components'
-import Img from '../elements/Img'
-// import theme from '../utils/ds'
-import introImg from '../../images/cannabis.jpg'
 
 const Container = styled.div`
   display: grid;
@@ -16,10 +14,21 @@ const Container = styled.div`
   }
 `
 
-const FeaturedPosts = () => {
+const getFeaturedPosts = (posts) => {
+  return posts.filter(post => post.frontmatter.featured)
+}
+
+const FeaturedPosts = ({ posts }) => {
+  const featuredPosts = getFeaturedPosts(posts)
   return (
     <Container>
-      <Img src={introImg} />
+      {featuredPosts.map((post, index) => (
+        <div key={post.id}>
+          <Link to={post.frontmatter.path}>
+            {post.frontmatter.title}
+          </Link>
+        </div>
+      ))}
     </Container>
   )
 }

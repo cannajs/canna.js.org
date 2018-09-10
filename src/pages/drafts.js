@@ -28,6 +28,7 @@ export const pageQuery = graphql`
             tags
             categories
             thumbnail
+            featured
             draft
           }
         }

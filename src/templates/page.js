@@ -2,7 +2,7 @@ import * as React from 'react'
 import { graphql, Link } from 'gatsby'
 import styled from 'styled-components'
 // import Card from '../elements/Card'
-import Posts from '../components/blog/posts'
+import Posts from '../components/blog/Posts'
 import Layout from '../components/layouts'
 import Pagination from '../components/elements/Pagination'
 

@@ -54,6 +54,7 @@ tags: "${strainType}"
 categories: "strains"
 thumbnail: "${thumbnailUrl}"
 draft: false
+featured: false
 ---
 ${strainDescription}`
     const targetDir = path.join(targetDirectory, `strains-${strainNameKebabCase}`)

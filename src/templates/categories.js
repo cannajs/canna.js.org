@@ -3,7 +3,7 @@ import { graphql, Link } from 'gatsby'
 import styled from 'styled-components'
 import Card from '../components/elements/Card'
 import Layout from '../components/layouts'
-import Posts from '../components/blog/posts'
+import Posts from '../components/blog/Posts'
 import Pagination from '../components/elements/Pager'
 
 const H1 = styled.h1`

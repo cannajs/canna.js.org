@@ -29,6 +29,7 @@ exports.createPages = ({ actions, graphql }) => {
               tags
               categories
               thumbnail
+              featured
               title
               draft
             }
@@ -56,6 +57,7 @@ exports.createPages = ({ actions, graphql }) => {
               tags
               categories
               thumbnail
+              featured
               title
               draft
             }
