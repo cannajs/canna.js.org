@@ -35,8 +35,6 @@ const Nav = styled.ul`
 
 const NavItem = styled.li`
   padding: 0;
-  transition: all .5s;
-  line-height: 2rem;
 
   a {
     font-family: ${theme.get('fontFamily.heading')};
@@ -46,8 +44,17 @@ const NavItem = styled.li`
     color: ${theme.brand('link')};
     letter-spacing: 1px;
 
-    &:hover {
-      border-bottom: 2px solid ${theme.brand('link')};
+    &:after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 1px;
+      background: ${theme.brand('contrastLink')};
+      transition: width .2s ease-in-out;
+    }
+
+    &:hover:after {
+      width: 100%;
     }
   }
 `

@@ -30,12 +30,12 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      limit: 5
+      limit: 10
       filter: { frontmatter: { draft: { ne: true } } }
     ) {
       edges {
         node {
-          excerpt(pruneLength: 250)
+          excerpt(pruneLength: 350)
           id
           frontmatter {
             title
@@ -43,6 +43,7 @@ export const pageQuery = graphql`
             path
             tags
             categories
+            thumbnail
             draft
           }
         }

@@ -10,6 +10,7 @@ const HR = styled.div`
   letter-spacing: 3rem;
   margin: 2rem auto;
   justify-content: center;
+  text-indent: 3rem;
 }
 `
 

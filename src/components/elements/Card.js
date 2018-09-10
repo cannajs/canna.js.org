@@ -29,7 +29,9 @@ ${media.tablet`
 const Card = ({ title, content, path, thumbnail }) => {
   return (
     <Grid>
-      <Thumbnail src={thumbnail} />
+      <Link to={path}>
+        <Thumbnail src={thumbnail} />
+      </Link>
       <div>
         {title && <Link to={path}><H1>{title}</H1></Link>}
         <P>{content}</P>

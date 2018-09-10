@@ -20,7 +20,7 @@ exports.createPages = ({ actions, graphql }) => {
             }
           }
           node {
-            excerpt(pruneLength: 250)
+            excerpt(pruneLength: 650)
             html
             id
             frontmatter {
@@ -28,6 +28,7 @@ exports.createPages = ({ actions, graphql }) => {
               path
               tags
               categories
+              thumbnail
               title
               draft
             }
@@ -46,7 +47,7 @@ exports.createPages = ({ actions, graphql }) => {
             }
           }
           node {
-            excerpt(pruneLength: 250)
+            excerpt(pruneLength: 650)
             html
             id
             frontmatter {
@@ -54,6 +55,7 @@ exports.createPages = ({ actions, graphql }) => {
               path
               tags
               categories
+              thumbnail
               title
               draft
             }

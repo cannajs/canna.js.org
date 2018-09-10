@@ -36,7 +36,7 @@ module.exports = {
                     }
                   }
                   node {
-                    excerpt(pruneLength: 250)
+                    excerpt(pruneLength: 650)
                     html
                     id
                     frontmatter {
@@ -44,6 +44,7 @@ module.exports = {
                       path
                       tags
                       categories
+                      thumbnail
                       title
                       draft
                     }
@@ -69,7 +70,7 @@ module.exports = {
                     }
                   }
                   node {
-                    excerpt(pruneLength: 250)
+                    excerpt(pruneLength: 650)
                     html
                     id
                     frontmatter {
@@ -77,6 +78,7 @@ module.exports = {
                       path
                       tags
                       categories
+                      thumbnail
                       title
                       draft
                     }

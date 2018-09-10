@@ -8,6 +8,7 @@ import Tag from '../components/elements/Tag'
 import Paragraph from '../components/elements/Paragraph'
 import Timestamp from '../components/elements/Timestamp'
 import Category from '../components/elements/Category'
+import Hero from '../components/elements/Hero'
 import Layout from '../components/layouts'
 
 const H1 = styled.h1`
@@ -27,7 +28,7 @@ export default function Template ({ data }) {
   const date = meta.date
   const title = meta.title
   const category = meta.categories
-
+  const coverImage = meta.cover_image || meta.thumbnail
   return (
     <Layout>
       <Timestamp>
@@ -37,6 +38,7 @@ export default function Template ({ data }) {
           </time>
         </strong>
       </Timestamp>
+      <Hero src={coverImage} />
       <H1>{title}</H1>
       <Paragraph>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -78,6 +80,7 @@ export const pageQuery = graphql`
         path
         tags
         categories
+        thumbnail
         title
         draft
       }
@@ -90,6 +93,7 @@ export const pageQuery = graphql`
         path
         tags
         categories
+        thumbnail
         title
         draft
       }

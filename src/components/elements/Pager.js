@@ -7,7 +7,9 @@ const Container = styled.div`
   justify-content: space-between;
 `
 const Prev = styled.div``
-const Curr = styled.div``
+const Curr = styled.div`
+  text-align: center;
+`
 const Next = styled.div``
 
 const Pagination = ({ prevPath, nextPath, page, pagesSum, slug, path }) => (

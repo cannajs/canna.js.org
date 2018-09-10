@@ -9,10 +9,6 @@ const ReadMore = styled.div`
   letter-spacing: .02rem;
   color: ${theme.brand('link')};
   border-bottom: 1px solid;
-
-  a {
-    font-weight: 600;
-  }
 `
 
 export default ReadMore

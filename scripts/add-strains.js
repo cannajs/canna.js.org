@@ -12,21 +12,33 @@ const timeStamp = require('time-stamp')
 const database = path.join(__dirname, '../data/cannabis.csv')
 const targetDirectory = path.join(__dirname, '../blog')
 
-let counter = 0
-
 fs.createReadStream(database)
   .pipe(csv2())
   .pipe(through2.obj(function (chunk, _, cb) {
     const strainName = chunk[0]
     const strainNameKebabCase = kebabCase(strainName)
-    if (counter < 20) {
+    const whitelist = [
+      'blue-dream',
+      'jack-herrer',
+      'green-crack',
+      'pineapple-express',
+      'romulan',
+      'girl-scout-cookies',
+      'sour-diesel',
+      'super-lemon-haze',
+      'og-kush',
+      'durban-poison',
+      'space-queen',
+      'dutch-treat',
+      'bruce-banner'
+    ]
+    if (whitelist.includes(strainNameKebabCase)) {
       this.push({
         strainName: strainName.replace('-', ' '),
         strainNameKebabCase: strainNameKebabCase,
         strainType: chunk[1],
         strainDescription: chunk[5]
       })
-      counter++
     }
     cb()
   }))
@@ -41,6 +53,7 @@ title: "${strainName}"
 tags: "${strainType}"
 categories: "strains"
 thumbnail: "${thumbnailUrl}"
+draft: false
 ---
 ${strainDescription}`
     const targetDir = path.join(targetDirectory, `strains-${strainNameKebabCase}`)
