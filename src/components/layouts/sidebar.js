@@ -4,7 +4,7 @@ import theme from '../utils/ds'
 import Box from '../elements/Box'
 import Ad from '../elements/Ad'
 import Sidebar from '../elements/Sidebar'
-import StrainOfTheDay from '../../modules/StrainOfTheDay'
+import StrainOfThe from '../../modules/StrainOfThe'
 
 const SidebarBox = Box.extend`
   border-top: 1px solid ${theme.brand('border')};
@@ -17,7 +17,7 @@ export const SidebarLayout = () => {
       <Ad placement='sidebar'>Advertisement</Ad>
       <div>
         <SidebarBox>
-          <StrainOfTheDay />
+          <StrainOfThe />
         </SidebarBox>
       </div>
     </Sidebar>

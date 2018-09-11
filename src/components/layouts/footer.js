@@ -61,19 +61,19 @@ export const FooterLayout = () => {
             <Title>420 • bytes</Title>
             <List>
               <Item>
-                <Link to='/'>About</Link>
+                <Link to='/about'>About</Link>
               </Item>
               <Item>
-                <Link to='/'>Contact</Link>
+                <Link to='/contact'>Contact</Link>
               </Item>
               <Item>
-                <Link to='/'>Feed</Link>
+                <Link to='/feed'>Feed</Link>
               </Item>
               <Item>
-                <Link to='/'>Sponsors</Link>
+                <Link to='/sponsors'>Sponsors</Link>
               </Item>
               <Item>
-                <Link to='/'>Legal</Link>
+                <Link to='/legal'>Legal</Link>
               </Item>
             </List>
           </Section>
@@ -83,22 +83,22 @@ export const FooterLayout = () => {
             <Title>Interests</Title>
             <List>
               <Item>
-                <Link to='/'>Gear</Link>
+                <Link to='/category/gear'>Gear</Link>
               </Item>
               <Item>
-                <Link to='/'>Strains</Link>
+                <Link to='/category/strains'>Strains</Link>
               </Item>
               <Item>
-                <Link to='/'>Food</Link>
+                <Link to='/category/food'>Food</Link>
               </Item>
               <Item>
-                <Link to='/'>Tech</Link>
+                <Link to='/category/tech'>Tech</Link>
               </Item>
               <Item>
-                <Link to='/'>Science</Link>
+                <Link to='/category/science'>Science</Link>
               </Item>
               <Item>
-                <Link to='/'>Law</Link>
+                <Link to='/category/law'>Law</Link>
               </Item>
             </List>
           </Section>

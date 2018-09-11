@@ -9,12 +9,10 @@ module.exports = {
   plugins: [
     'gatsby-plugin-catch-links',
     'gatsby-plugin-styled-components',
-    {
-      resolve: 'gatsby-plugin-typography',
-      options: {
-        pathToConfigModule: 'src/components/utils/typography'
-      }
-    },
+    'gatsby-plugin-react-helmet',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
+    // 'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-paginate',
       options: {
@@ -52,7 +50,7 @@ module.exports = {
                   }
                 }
               }
-            }`,
+            }`
           },
           {
             path: '/drafts/page',
@@ -120,9 +118,12 @@ module.exports = {
         }]
       }
     },
-    'gatsby-plugin-react-helmet',
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-plugin-typography',
+      options: {
+        pathToConfigModule: 'src/components/utils/typography'
+      }
+    },
     // 'gatsby-plugin-offline',
     // {
     //   resolve: 'gatsby-plugin-canonical-urls',
@@ -140,7 +141,6 @@ module.exports = {
     //     theme_color: '#ffc0cb'
     //   }
     // },
-    // 'gatsby-plugin-feed',
     // {
     //   resolve: 'gatsby-plugin-google-tagmanager',
     //   options: {
@@ -157,72 +157,73 @@ module.exports = {
     //     anonymize: true
     //   },
     // },
-    // {
-    //   resolve: `gatsby-plugin-feed`,
-    //   options: {
-    //     query: `
-    //     {
-    //       site {
-    //         siteMetadata {
-    //           title
-    //           description
-    //           siteUrl
-    //         }
-    //       }
-    //     }
-    //   `,
-    //     feeds: [
-    //       {
-    //         serialize: ({ query: { site, allMarkdownRemark } }) => {
-    //           return allMarkdownRemark.edges
-    //             .filter(post => !post.node.frontmatter.draft)
-    //             .map(edge => {
-    //               return Object.assign({}, edge.node.frontmatter, {
-    //                 description: edge.node.excerpt,
-    //                 url: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
-    //                 guid: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
-    //                 custom_elements: [{ 'content:encoded': edge.node.html }],
-    //               });
-    //             });
-    //         },
-    //         setup: ({
-    //           query: {
-    //             site: { siteMetadata },
-    //           },
-    //         }) => {
-    //           return {
-    //             title: siteMetadata.title,
-    //             description: siteMetadata.description,
-    //             feed_url: siteMetadata.siteUrl + `/blog/rss.xml`,
-    //             site_url: siteMetadata.siteUrl,
-    //             generator: `GatsbyJS`,
-    //           };
-    //         },
-    //         query: `
-    //         {
-    //           allMarkdownRemark(
-    //             limit: 1000,
-    //             sort: { order: DESC, fields: [frontmatter___date] }
-    //           ) {
-    //             edges {
-    //               node {
-    //                 excerpt
-    //                 html
-    //                 frontmatter {
-    //                   title
-    //                   date
-    //                   path
-    //                   draft
-    //                 }
-    //               }
-    //             }
-    //           }
-    //         }
-    //       `,
-    //         output: '/rss.xml',
-    //       },
-    //     ],
-    //   },
-    // },
+    {
+      resolve: 'gatsby-plugin-feed',
+      options: {
+        query: `
+        {
+          site {
+            siteMetadata {
+              title
+              description
+              siteUrl
+            }
+          }
+        }
+      `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.edges
+                .map(edge => {
+                  return Object.assign({}, edge.node.frontmatter, {
+                    description: edge.node.excerpt,
+                    url: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
+                    guid: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
+                    custom_elements: [{ 'content:encoded': edge.node.html }]
+                  })
+                })
+            },
+            setup: ({
+              query: {
+                site: { siteMetadata }
+              }
+            }) => {
+              return {
+                title: siteMetadata.title,
+                description: siteMetadata.description,
+                feed_url: siteMetadata.siteUrl + '/rss.xml',
+                site_url: siteMetadata.siteUrl,
+                generator: `GatsbyJS`
+              }
+            },
+            query: `
+            {
+              allMarkdownRemark(
+                limit: 1000,
+                sort: { order: DESC, fields: [frontmatter___date] }
+                filter: {frontmatter: { draft: { ne: true } }}
+              ) {
+                edges {
+                  node {
+                    excerpt
+                    html
+                    frontmatter {
+                      title
+                      date
+                      thumbnail
+                      path
+                      draft
+                    }
+                  }
+                }
+              }
+            }
+          `,
+            output: '/rss.xml'
+          }
+        ]
+      }
+    }
   ]
 }

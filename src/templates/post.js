@@ -38,7 +38,7 @@ export default function Template ({ data }) {
           </time>
         </strong>
       </Timestamp>
-      <Hero src={coverImage} />
+      { category === 'strains' && <Hero src={coverImage} />}
       <H1>{title}</H1>
       <Paragraph>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />

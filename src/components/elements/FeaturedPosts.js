@@ -25,7 +25,7 @@ const FeaturedPosts = ({ posts }) => {
       {featuredPosts.map((post, index) => (
         <div key={post.id}>
           <Link to={post.frontmatter.path}>
-            {post.frontmatter.title}
+            <strong>{post.frontmatter.title}</strong> • {post.frontmatter.description}
           </Link>
         </div>
       ))}

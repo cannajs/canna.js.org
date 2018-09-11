@@ -31,10 +31,10 @@ const Grid = styled.div`
   grid-template-columns: auto;
 `
 
-const StrainOfTheDay = () => {
+const StrainOfTheWeek = () => {
   return (
     <React.Fragment>
-      <Headline>Strain of the Day</Headline>
+      <Headline>Strain of the Week</Headline>
       <Grid>
         <Content>
           <Img src='//picsum.photos/750/550' />
@@ -50,7 +50,7 @@ const StrainOfTheDay = () => {
   )
 }
 
-export default StrainOfTheDay
+export default StrainOfTheWeek
 
 { /* <SidebarBox>
   <Headline>Review: Strains</Headline>

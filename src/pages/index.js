@@ -31,19 +31,20 @@ export const pageQuery = graphql`
     }
     featuredPosts: allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] },
-      limit: 5,
+      limit: 6,
       filter: { frontmatter: { featured: { eq: true }, draft: { ne: true } } }
     ) {
       edges {
         node {
           html
-          excerpt
+          excerpt(pruneLength: 150)
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             path
             tags
             categories
             thumbnail
+            description
             featured
             title
             draft
@@ -53,13 +54,13 @@ export const pageQuery = graphql`
     }
     posts: allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      limit: 10
+      limit: 6
       filter: { frontmatter: { draft: { ne: true } } }
     ) {
       edges {
         node {
           html
-          excerpt
+          excerpt(pruneLength: 650)
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             path
