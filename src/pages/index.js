@@ -44,6 +44,7 @@ export const pageQuery = graphql`
             tags
             categories
             thumbnail
+            video
             description
             featured
             title
@@ -67,6 +68,7 @@ export const pageQuery = graphql`
             tags
             categories
             thumbnail
+            video
             title
             draft
           }

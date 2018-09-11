@@ -3,7 +3,7 @@ import theme from '../utils/ds'
 
 export const Timestamp = styled.div`
   font-family: ${theme.get('fontFamily.footnote')};
-  font-size: 12px;
+  font-size: 13px;
   text-transform: uppercase;
   letter-spacing: .03rem;
   color: ${theme.brand('text')};

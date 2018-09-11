@@ -26,11 +26,15 @@ ${media.tablet`
 `}
 `
 
-const Card = ({ title, content, path, thumbnail }) => {
+const MaxWidthThumbnail = Thumbnail.extend`
+  max-width: 400px;
+`
+
+const Card = ({ title, content, path, thumbnail, video }) => {
   return (
     <Grid>
       <Link to={path}>
-        <Thumbnail src={thumbnail} />
+        <MaxWidthThumbnail src={thumbnail} isVideo={video} />
       </Link>
       <div>
         {title && <Link to={path}><H1>{title}</H1></Link>}

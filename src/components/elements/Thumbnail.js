@@ -8,6 +8,19 @@ const Thumbnail = styled.div`
   display: inline-block;
   width: 100%;
   padding-bottom: 56.2%;
+  position: relative;
+
+  ${props => props.isVideo && `
+    &:after {
+      content: "|>";
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      width: inherit;
+      height: 100%;
+    }
+  `}
 `
 
 export default Thumbnail

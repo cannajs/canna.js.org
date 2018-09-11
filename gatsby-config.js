@@ -43,6 +43,7 @@ module.exports = {
                       tags
                       categories
                       thumbnail
+                      video
                       featured
                       title
                       draft
@@ -78,6 +79,7 @@ module.exports = {
                       tags
                       categories
                       thumbnail
+                      video
                       featured
                       title
                       draft

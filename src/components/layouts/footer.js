@@ -11,7 +11,7 @@ const Grid = styled.div`
   grid-gap: 0;
   grid-template-columns: 50% 50%;
 ${media.desktop`
-  grid-template-columns: 33.33% 33.33% 33.33%;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 `}
 `
 
@@ -68,9 +68,6 @@ export const FooterLayout = () => {
               </Item>
               <Item>
                 <Link to='/feed'>Feed</Link>
-              </Item>
-              <Item>
-                <Link to='/sponsors'>Sponsors</Link>
               </Item>
               <Item>
                 <Link to='/legal'>Legal</Link>

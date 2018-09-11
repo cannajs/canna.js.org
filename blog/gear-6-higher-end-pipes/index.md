@@ -9,6 +9,7 @@ thumbnail: "https://d3atagt0rnqk7k.cloudfront.net/wp-content/uploads/2017/05/101
 cover: "https://d3atagt0rnqk7k.cloudfront.net/wp-content/uploads/2017/05/10130529/luxury-cannabis-products-8-1280x800.jpg"
 draft: false
 featured: true
+video: true
 ---
 
 You're probably used to simple glass pipes, but in a world where we put tons of money into hobbies, why not invest in some luxury smoking gear?

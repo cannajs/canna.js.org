@@ -20,6 +20,7 @@ const Post = ({ post }) => {
   const title = meta.title
   const category = meta.categories
   const thumbnail = meta.thumbnail
+  const video = meta.video
   return (
     <Posts key={post.id}>
       <Category>
@@ -31,7 +32,7 @@ const Post = ({ post }) => {
       <Timestamp>
         <strong><time dateTime={post.frontmatter.date}>{moment(post.frontmatter.date).format('MMMM Do YYYY • h:mm a')}</time></strong>
       </Timestamp>
-      <Card content={post.excerpt} thumbnail={thumbnail} path={post.frontmatter.path} />
+      <Card video={video} content={post.excerpt} thumbnail={thumbnail} path={post.frontmatter.path} />
     </Posts>
   )
 };

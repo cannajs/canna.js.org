@@ -19,6 +19,7 @@
   "dependencies": {
     "core-js": "^2.5.7",
     "design-system-utils": "^1.0.1",
+    "downshift": "^2.2.2",
     "gatsby": "next",
     "gatsby-image": "next",
     "gatsby-plugin-canonical-urls": "next",

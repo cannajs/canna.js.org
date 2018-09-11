@@ -54,15 +54,15 @@ export const ds = {
   // { name: 'Maitree', styles: ['200', '400', '600'] },
   // { name: 'Petrona', styles: ['200', '400', '600'] }
   fontFamily: {
-    heading: 'IBM Plex Sans Condensed',
+    heading: 'Karla',
     body: 'Karla',
-    serif: 'Karla',
-    sans: 'IBM Plex Sans Condensed',
+    serif: 'Petrona',
+    sans: 'Karla',
     focus: 'Karla',
     paragraph: 'Petrona',
     footnote: 'Karla',
     footer: {
-      title: 'IBM Plex Sans Condensed',
+      title: 'Karla',
       body: 'Karla'
     }
   },
