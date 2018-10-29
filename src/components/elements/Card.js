@@ -7,6 +7,10 @@ import Thumbnail from '../elements/Thumbnail'
 
 const Grid = styled.div`
   display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: calc(150px) auto;
+  grid-gap: 0 1rem;
+  align-items: flex-start;
 ${media.tablet`
   grid-auto-flow: column;
   grid-template-columns: calc(400px) auto;
@@ -20,7 +24,6 @@ const H1 = styled.h1`
 `
 
 const P = styled.div`
-  margin-top: 1rem;
 ${media.tablet`
   margin: 0 0 1rem;
 `}

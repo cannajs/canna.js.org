@@ -11,13 +11,15 @@ const Grid = styled.div`
   grid-gap: 0;
   grid-template-columns: 50% 50%;
 ${media.desktop`
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 1340px;
+  margin: 3rem auto;
 `}
 `
 
 const Column = styled.div`
   padding: ${props => props.padding ? props.padding : ''};
-  margin: ${props => props.margin ? props.margin : '1rem 2rem 0'};
+  margin: ${props => props.margin ? props.margin : '1rem'};
 `
 
 const Title = styled.h3`

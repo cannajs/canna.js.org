@@ -16,7 +16,7 @@ export default function Index ({ data }) {
   return (
     <Layout>
       <FeaturedPosts posts={featuredPosts} />
-      <Posts posts={posts} />
+      <Posts posts={posts} withBorder />
       <Link to='/page/2'>← Older</Link>
     </Layout>
   )

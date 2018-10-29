@@ -6,23 +6,24 @@ import Category from '../elements/Category'
 import Timestamp from '../elements/Timestamp'
 import Card from '../elements/Card'
 
-const Posts = styled.div`
+const Container = styled.div`
   margin-bottom: 1rem;
   padding-bottom: 4rem;
+  ${props => props.withBorder && `border-top: 1px solid #000;`}
 `
 
 const H1 = styled.h1``
 
 const Label = styled.span``
 
-const Post = ({ post }) => {
+const Post = ({ post, withBorder }) => {
   const meta = post.frontmatter
   const title = meta.title
   const category = meta.categories
   const thumbnail = meta.thumbnail
   const video = meta.video
   return (
-    <Posts key={post.id}>
+    <Container key={post.id} withBorder={withBorder}>
       <Category>
         <Label>Filed to</Label>&nbsp;<Link rel='category' to={`/category/${category}`} title={category}>{category}</Link>
       </Category>
@@ -33,7 +34,7 @@ const Post = ({ post }) => {
         <strong><time dateTime={post.frontmatter.date}>{moment(post.frontmatter.date).format('MMMM Do YYYY • h:mm a')}</time></strong>
       </Timestamp>
       <Card video={video} content={post.excerpt} thumbnail={thumbnail} path={post.frontmatter.path} />
-    </Posts>
+    </Container>
   )
 };
 

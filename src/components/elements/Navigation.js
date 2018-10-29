@@ -91,22 +91,16 @@ const Navigation = () => {
       </Toggle>
       <Nav>
         <NavItem>
+          <Link to='/about'>about</Link>
+        </NavItem>
+        <NavItem>
+          <Link to='/contact'>contact</Link>
+        </NavItem>
+        <NavItem>
           <Link to='/category/gear'>gear</Link>
         </NavItem>
         <NavItem>
-          <Link to='/category/strains'>strains</Link>
-        </NavItem>
-        <NavItem>
-          <Link to='/category/food'>food</Link>
-        </NavItem>
-        <NavItem>
-          <Link to='/category/tech'>tech</Link>
-        </NavItem>
-        <NavItem>
-          <Link to='/category/science'>science</Link>
-        </NavItem>
-        <NavItem>
-          <Link to='/category/law'>law</Link>
+          <Link to='/feed'>feed</Link>
         </NavItem>
       </Nav>
     </NavContainer>

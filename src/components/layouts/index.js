@@ -30,6 +30,7 @@ const Container = styled.section`
   grid-template-rows: auto;
 
 ${media.desktop`
+  padding: 1rem 0;
   grid-template-columns: auto calc(300px - 1rem);
 `}
 ${media.giant`

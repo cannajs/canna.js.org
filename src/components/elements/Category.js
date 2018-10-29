@@ -8,7 +8,6 @@ const Category = styled.div`
   margin: 0;
   justify-content: flex-end;
   font-family: ${theme.get('fontFamily.sans')};
-  border-top: 1px solid #000;
   text-transform: uppercase;
   font-size: 13px;
 

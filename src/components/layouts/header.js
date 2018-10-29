@@ -11,6 +11,7 @@ import logo from '../../images/logo.svg'
 const Logo = styled.div`
   img {
     margin: 0;
+    max-width: 400px;
   }
 `
 

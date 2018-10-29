@@ -20,7 +20,7 @@ const Categories = ({ pageContext, data }) => {
   return (
     <Layout>
       <H1>{category}</H1>
-      <Posts posts={posts} />
+      <Posts posts={posts} withBorder />
       <Pagination path='category' slug={category} page={page} pagesSum={pagesSum} />
     </Layout>
   )

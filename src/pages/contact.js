@@ -14,6 +14,7 @@ const ImgContainer = styled.div`
 
 const ContentContainer = styled.div`
   width: auto;
+  text-align: center;
 `
 
 const Grid = styled.div`
@@ -28,10 +29,10 @@ const Contact = () => (
       <h1>Contact</h1>
       <Grid>
         <ContentContainer>
-          420 bytes is based in Washington, DC.
+          420•bytes 💚 Washington, D.C. where cannabis use and possession is legal under Initiative 71.
         </ContentContainer>
         <ContentContainer>
-          Contact us by email at info@420bytes.com
+          Contact us by email at <a href="mailto:info@420bytes.com">info@420bytes.com</a>
         </ContentContainer>
       </Grid>
     </React.Fragment>

@@ -5,6 +5,7 @@ const Footer = styled.div`
   background-color: ${theme.brand('contrastBackground')};
   grid-row-start: 2;
   grid-row-end: 3;
+  margin-top: 4rem;
 `
 
 export default Footer

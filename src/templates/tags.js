@@ -21,7 +21,7 @@ export default function Tags ({ pageContext, data }) {
   return (
     <Layout>
       <H1>{tag}</H1>
-      <Posts posts={posts} />
+      <Posts posts={posts} withBorder />
       <Pagination path='tag' slug={tag} page={page} pagesSum={pagesSum} />
     </Layout>
   )
